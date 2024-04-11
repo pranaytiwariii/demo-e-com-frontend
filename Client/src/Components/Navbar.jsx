@@ -67,21 +67,21 @@ export default function Navbar() {
                       <div className="text-sm flex flex-col">
                         <div
                           className="hover:text-[#6941C6]"
-                          to="/Lakeside camping"
+                          to="/"
                         >
-                          Lakeside camping
+                          option 1
                         </div>
                         <div
                           className="hover:text-[#6941C6]"
-                          to="/Riverside camping"
+                          to="/"
                         >
-                          Riverside camping
+                          option 2
                         </div>
                         <div
                           className="hover:text-[#6941C6]"
-                          to="/Mountaintop camping"
+                          to="/"
                         >
-                          Mountaintop camping
+                          option3
                         </div>
                       </div>
                     )}
@@ -149,21 +149,21 @@ export default function Navbar() {
                       <div className="text-sm flex flex-col">
                         <div
                           className="hover:text-[#6941C6]"
-                          to="/Lakeside camping"
+                          to="/"
                         >
-                          Lakeside camping
+                          option1
                         </div>
                         <div
                           className="hover:text-[#6941C6]"
                           to="/Riverside camping"
                         >
-                          Riverside camping
+                          option 2
                         </div>
                         <div
                           className="hover:text-[#6941C6]"
                           to="/Mountaintop camping"
                         >
-                          Mountaintop camping
+                          option 3
                         </div>
                       </div>
                     )}
@@ -235,6 +235,15 @@ export default function Navbar() {
                 </div>
               ))}
             </div>
+            <button className="bg-lime-400 hover:bg-white hover:text-lime-400 hover:border-lime-400 border rounded-full text-white font-bold text-lg py-2 px-8 mt-8">
+                Start free trial
+              </button>
+              <button className="bg-lime-400 hover:bg-white hover:text-lime-400 hover:border-lime-400 border rounded-full text-white font-bold text-lg py-2 px-8 mt-8">
+                call 09999999999
+              </button>
+              <button className="bg-lime-400 hover:bg-white hover:text-lime-400 hover:border-lime-400 border rounded-full text-white font-bold text-lg py-2 px-8 mt-8">
+                SCHEDULE A DEMO
+              </button>
           </div>
         )}
       </div>
