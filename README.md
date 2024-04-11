@@ -3,3 +3,5 @@
 i have worked on backend of a video sharing plateform and was able to write login controls hash password and save it in the database in mongodb also worked on JWT u can track it on
 by repo :- https://github.com/pranaytiwariii/Backend-prac 
 i am interested to work as fullstack developer but due to time constain and ongoing exam i was not able to work on backend part 
+# cloned the given e-com platform #
+we are live https://demo-e-com-frontend.vercel.app/
