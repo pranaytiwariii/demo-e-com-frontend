@@ -9,41 +9,14 @@ import down from "/Navbar/down.png";
 const navLink = [
     {
       id: 0,
-      header: "Home",
+      header: "Examples",
       link: "/",
     },
     {
       id: 1,
-      header: "Adventure Calendar",
-      link: "/Adventure Calendar",
-    },
-    {
-      id: 2,
-      header: "Types of camps",
-      ul1: "Lakeside Camping",
-      ul2: "River Camping",
-      ul3: "Mountain top camping",
-      link2: "/Riverside camping",
-      link3: "/Mountaintop camping",
-      link1: "/Lakeside camping",
-      up: "/Navbar/up.png",
-      down: "/Navbar/down.png",
-    },
-    {
-      id: 3,
-      header: "Book Experience",
-      link: "/Book Experience",
-    },
-    {
-      id: 4,
-      header: "About Us",
-      link: "/About Us",
-    },
-    // {
-    //   id: 4,
-    //   header: "Blogs",
-    //   link: "/Blogs",
-    // },
+      header: "Pricing",
+      link: "/",
+    }
   ];
 
 
@@ -130,21 +103,21 @@ export default function Navbar() {
                       <div className="text-sm flex flex-col">
                         <div
                           className="hover:text-[#6941C6]"
-                          to="/Lakeside camping"
+                          to=""
                         >
-                          Lakeside camping
+                          optoin1
                         </div>
                         <div
                           className="hover:text-[#6941C6]"
-                          to="/Riverside camping"
+                          to="/"
                         >
-                          Riverside camping
+                          option 2
                         </div>
                         <div
                           className="hover:text-[#6941C6]"
-                          to="/Mountaintop camping"
+                          to="/"
                         >
-                          Mountaintop camping
+                          optin 3
                         </div>
                       </div>
                     )}
@@ -227,7 +200,7 @@ export default function Navbar() {
           <div className="flex flex-col md:hidden">
             <ol className="text-[#505052]  px-2 py-1 rounded-md text-md font-medium">
               <button onClick={handleNav} className="flex pl-[30%] text-center">
-                <p className="">Types Of Camps</p>
+                <p className="">Resources</p>
                 {navClick ? (
                   <img className="h-5" src={up} alt="" />
                 ) : (
@@ -237,16 +210,16 @@ export default function Navbar() {
               {navClick && (
                 <div className="flex flex-col text-center">
                   <div className="hover:text-[#6941C6]" to="/Lakeside camping">
-                    Lake side camping
+                    option 1
                   </div>
                   <div className="hover:text-[#6941C6]" to="/Riverside camping">
-                    river side camping
+                    option2
                   </div>
                   <div
                     className="hover:text-[#6941C6]"
                     to="/Mountaintop camping"
                   >
-                    Mountain Top Camping
+                    optoion 2
                   </div>
                 </div>
               )}
