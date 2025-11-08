@@ -1,8 +1,8 @@
-import React from "react";
 import img from "/Navbar/log.png";
 import Typewriter from "typewriter-effect";
+import PropTypes from "prop-types";
 
-export default function Hero() {
+function Hero(props) {
   return (
     <div className="flex px-5 sm:py-40 relative lg:pl-40">
       <div className="z-[-20] bg-white gap-5">
@@ -15,7 +15,11 @@ export default function Hero() {
             <div className="text-lime-400">
               <Typewriter
                 options={{
-                  strings: ["B2B Marketplaces","Hyperlocal Marketplaces","Multicountry marketplaces"],
+                  strings: [
+                    "B2B Marketplaces",
+                    "Hyperlocal Marketplaces",
+                    "Multicountry marketplaces",
+                  ],
                   autoStart: true,
                   loop: true,
                 }}
@@ -26,8 +30,26 @@ export default function Hero() {
           <p className="text-gray-600 text-2xl mt-4">
             Designed for diverse B2B and B2C business models
           </p>
-          <button className="bg-lime-400 hover:bg-white hover:text-lime-400 hover:border-lime-400 border rounded-full text-white text-lg font-bold py-4 px-6 mt-8">
-            SCHEDULE A DEMO
+          <button
+            type="button"
+            onClick={() => {
+              // debug: confirm click fires
+              // check browser console for this message
+              // then call the passed handler if present
+              // eslint-disable-next-line no-console
+              console.log("Hero See Cart clicked");
+              props.onCartClick && props.onCartClick();
+            }}
+            aria-label="See Cart"
+            style={{ pointerEvents: "auto" }}
+            className="bg-lime-400 hover:bg-white hover:text-lime-400 hover:border-lime-400 border rounded-full text-white text-lg font-bold py-4 px-6 mt-8 relative z-[9999]"
+          >
+            See Cart
+            {props.cartItemCount > 0 && (
+              <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full h-6 w-6 flex items-center justify-center">
+                {props.cartItemCount}
+              </span>
+            )}
           </button>
         </header>
       </div>
@@ -39,3 +61,15 @@ export default function Hero() {
     </div>
   );
 }
+
+Hero.propTypes = {
+  onCartClick: PropTypes.func,
+  cartItemCount: PropTypes.number,
+};
+
+Hero.defaultProps = {
+  onCartClick: () => {},
+  cartItemCount: 0,
+};
+
+export default Hero;

@@ -1,29 +1,32 @@
-import React from "react";
 import logo from "/Navbar/logo.png";
-import { useState , userEffect } from "react";
+import { useState } from "react";
 import menu from "/Navbar/menu1.svg";
 import close1 from "/Navbar/close1.svg";
 import up from "/Navbar/up.png";
 import down from "/Navbar/down.png";
+import PropTypes from "prop-types";
+
+Navbar.propTypes = {
+  onCartClick: PropTypes.func,
+  cartItemCount: PropTypes.number,
+};
 
 const navLink = [
-    {
-      id: 0,
-      header: "Examples",
-      link: "/",
-    },
-    {
-      id: 1,
-      header: "Pricing",
-      link: "/",
-    }
-  ];
+  {
+    id: 0,
+    header: "Examples",
+    link: "/",
+  },
+  {
+    id: 1,
+    header: "Pricing",
+    link: "/",
+  },
+];
 
-
-export default function Navbar() {
+export default function Navbar(props) {
   const [toggle, setToggle] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-
 
   const handleClick = () => setToggle((prevToggle) => !prevToggle);
   const closeMenu = () => setToggle(false);
@@ -39,9 +42,11 @@ export default function Navbar() {
 
   return (
     <>
-      <div className={`font-sans z-50 sm:px-32 py-5 ${
+      <div
+        className={`font-sans z-50 sm:px-32 py-5 ${
           isScrolled ? "bg-black" : "fixed w-full bg-white"
-        }`}>
+        }`}
+      >
         <div className="z-30 pb-0 sm:px-6 ">
           <div className="flex items-center justify-between h-16 px-2 ">
             {/* Logo */}
@@ -51,9 +56,7 @@ export default function Navbar() {
             {/* Navlinks */}
             <div className="hidden md:flex">
               <div className="text-base 2xl:text-lg ml-10 flex items-baseline space-x-2">
-                <div
-                  className="text-[#505052] hover:text-[#6941C6] text-center px-2 py-1 rounded-md text-md font-medium"
-                >
+                <div className="text-[#505052] hover:text-[#6941C6] text-center px-2 py-1 rounded-md text-md font-medium">
                   <ol className="text-[#505052] text-center px-2 py-10 rounded-md text-md font-medium">
                     <button onClick={handleNav} className="flex">
                       Solutions
@@ -65,31 +68,20 @@ export default function Navbar() {
                     </button>
                     {navClick && (
                       <div className="text-sm flex flex-col">
-                        <div
-                          className="hover:text-[#6941C6]"
-                          to="/"
-                        >
+                        <div className="hover:text-[#6941C6]" to="/">
                           option 1
                         </div>
-                        <div
-                          className="hover:text-[#6941C6]"
-                          to="/"
-                        >
+                        <div className="hover:text-[#6941C6]" to="/">
                           option 2
                         </div>
-                        <div
-                          className="hover:text-[#6941C6]"
-                          to="/"
-                        >
+                        <div className="hover:text-[#6941C6]" to="/">
                           option3
                         </div>
                       </div>
                     )}
                   </ol>
                 </div>
-                <div
-                  className="text-[#505052] hover:text-[#6941C6] text-center px-2 py-1 rounded-md text-md font-medium"
-                >
+                <div className="text-[#505052] hover:text-[#6941C6] text-center px-2 py-1 rounded-md text-md font-medium">
                   <ol className="text-[#505052] text-center px-2 py-10 rounded-md text-md font-medium">
                     <button onClick={handleNav2} className="flex">
                       Develop
@@ -101,41 +93,26 @@ export default function Navbar() {
                     </button>
                     {navClick2 && (
                       <div className="text-sm flex flex-col">
-                        <div
-                          className="hover:text-[#6941C6]"
-                          to=""
-                        >
+                        <div className="hover:text-[#6941C6]" to="">
                           optoin1
                         </div>
-                        <div
-                          className="hover:text-[#6941C6]"
-                          to="/"
-                        >
+                        <div className="hover:text-[#6941C6]" to="/">
                           option 2
                         </div>
-                        <div
-                          className="hover:text-[#6941C6]"
-                          to="/"
-                        >
+                        <div className="hover:text-[#6941C6]" to="/">
                           optin 3
                         </div>
                       </div>
                     )}
                   </ol>
                 </div>
-                <div
-                  className="text-[#505052] hover:text-[#6941C6] text-center px-2 py-1 rounded-md text-md font-medium"
-                >
+                <div className="text-[#505052] hover:text-[#6941C6] text-center px-2 py-1 rounded-md text-md font-medium">
                   Examples
                 </div>
-                <div
-                  className="text-[#505052] hover:text-[#6941C6] text-center px-2 py-1 rounded-md text-md font-medium"
-                >
+                <div className="text-[#505052] hover:text-[#6941C6] text-center px-2 py-1 rounded-md text-md font-medium">
                   Pricing
                 </div>
-                <div
-                  className="text-[#505052] hover:text-[#6941C6] text-center px-2 py-1 rounded-md text-md font-medium"
-                >
+                <div className="text-[#505052] hover:text-[#6941C6] text-center px-2 py-1 rounded-md text-md font-medium">
                   <ol className="text-[#505052] text-center px-2 py-10 rounded-md text-md font-medium">
                     <button onClick={handleNav1} className="flex">
                       Resources
@@ -147,10 +124,7 @@ export default function Navbar() {
                     </button>
                     {navClick1 && (
                       <div className="text-sm flex flex-col">
-                        <div
-                          className="hover:text-[#6941C6]"
-                          to="/"
-                        >
+                        <div className="hover:text-[#6941C6]" to="/">
                           option1
                         </div>
                         <div
@@ -173,8 +147,16 @@ export default function Navbar() {
             </div>
             {/* lastlinks */}
             <div className="hidden  md:flex pb-5">
-              <button className="bg-lime-400 hover:bg-white hover:text-lime-400 hover:border-lime-400 border rounded-full text-white font-bold text-lg py-2 px-8 mt-8">
-                SCHEDULE A DEMO
+              <button
+                onClick={props.onCartClick}
+                className="bg-lime-400 hover:bg-white hover:text-lime-400 hover:border-lime-400 border rounded-full text-white font-bold text-lg py-2 px-8 mt-8 relative"
+              >
+                See Cart
+                {props.cartItemCount > 0 && (
+                  <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full h-6 w-6 flex items-center justify-center">
+                    {props.cartItemCount}
+                  </span>
+                )}
               </button>
             </div>
 
@@ -236,14 +218,22 @@ export default function Navbar() {
               ))}
             </div>
             <button className="bg-lime-400 hover:bg-white hover:text-lime-400 hover:border-lime-400 border rounded-full text-white font-bold text-lg py-2 px-8 mt-8">
-                Start free trial
-              </button>
-              <button className="bg-lime-400 hover:bg-white hover:text-lime-400 hover:border-lime-400 border rounded-full text-white font-bold text-lg py-2 px-8 mt-8">
-                call 09999999999
-              </button>
-              <button className="bg-lime-400 hover:bg-white hover:text-lime-400 hover:border-lime-400 border rounded-full text-white font-bold text-lg py-2 px-8 mt-8">
-                SCHEDULE A DEMO
-              </button>
+              Start free trial
+            </button>
+            <button className="bg-lime-400 hover:bg-white hover:text-lime-400 hover:border-lime-400 border rounded-full text-white font-bold text-lg py-2 px-8 mt-8">
+              call 09999999999
+            </button>
+            <button
+              onClick={props.onCartClick}
+              className="bg-lime-400 hover:bg-white hover:text-lime-400 hover:border-lime-400 border rounded-full text-white font-bold text-lg py-2 px-8 mt-8 relative"
+            >
+              See Cart
+              {props.cartItemCount > 0 && (
+                <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full h-6 w-6 flex items-center justify-center">
+                  {props.cartItemCount}
+                </span>
+              )}
+            </button>
           </div>
         )}
       </div>
